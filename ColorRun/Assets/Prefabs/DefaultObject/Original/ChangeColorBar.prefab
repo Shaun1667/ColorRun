@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5432717828489907159}
   m_Layer: 0
   m_Name: ChangeColorBar
-  m_TagString: ChageColorBar
+  m_TagString: ChangeColorBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

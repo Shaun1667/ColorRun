@@ -43,4 +43,11 @@ public class ChangeColorBarController : MonoBehaviour
             yield return waitForSeconds;
         }
     }
+    public void SetColor(Color color)
+    {
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            renderers[i].color = color;
+        }
+    }
 }
