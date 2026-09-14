@@ -646,6 +646,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f3825da7b41a54492a95f84aed5477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaSpawner
+  colors:
+  - {r: 1, g: 0.5518868, b: 0.5518868, a: 1}
+  - {r: 1, g: 0.801921, b: 0.5518868, a: 1}
+  - {r: 1, g: 0.9746919, b: 0.5613208, a: 1}
+  - {r: 0.673238, g: 1, b: 0.5330188, a: 1}
+  - {r: 0.6933962, g: 0.9969941, b: 1, a: 1}
+  - {r: 1, g: 0.7783019, b: 0.9596912, a: 1}
   areaPrefabs:
   - {fileID: 2289247579322614725, guid: 0c9de83b7e3df3d4f8d9599d597ab6d9, type: 3}
   - {fileID: 4876219707249553723, guid: 99b2f42c603962c48a90e73c5b5a9384, type: 3}
@@ -804,6 +811,7 @@ GameObject:
   - component: {fileID: 926443279}
   - component: {fileID: 926443280}
   - component: {fileID: 926443281}
+  - component: {fileID: 926443282}
   m_Layer: 0
   m_Name: Collision
   m_TagString: Untagged
@@ -889,6 +897,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.12
+--- !u!114 &926443282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926443278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7169743150d6294fb1c6fc63b2ba9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCollision
+  areaSpawner: {fileID: 665888351}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

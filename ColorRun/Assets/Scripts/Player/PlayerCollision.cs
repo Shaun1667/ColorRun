@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    //이전 구역 삭제...
-    //충돌한 물체를 삭제...
+
 
     [SerializeField]
     private AreaSpawner areaSpawner;
