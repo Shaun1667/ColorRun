@@ -6,6 +6,10 @@ public class AreaSpawner : MonoBehaviour
     private readonly float areaLength = 18;
 
     [SerializeField]
+    private Color[] colors;
+
+
+    [SerializeField]
     private GameObject[] areaPrefabs;
     [SerializeField]
     private Transform player;
@@ -20,7 +24,8 @@ public class AreaSpawner : MonoBehaviour
     {
         int index = Random.Range(0, areaPrefabs.Length);
         Vector3 position = Vector3.up * areaLength * areaIndex;
-        Instantiate(areaPrefabs[index], position, Quaternion.identity, transform);
+        GameObject area = Instantiate(areaPrefabs[index], position, Quaternion.identity, transform);
+        area.GetComponent<AreaController>().Setup(colors);
 
         areaIndex++;
     }
