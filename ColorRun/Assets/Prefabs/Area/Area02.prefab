@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7792630712701866507}
+  - component: {fileID: 3505102144936158857}
   m_Layer: 0
   m_Name: Area02
   m_TagString: Untagged
@@ -43,6 +44,23 @@ Transform:
   - {fileID: 6473779289692895949}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3505102144936158857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876219707249553723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a57d130c93bc447a62f8b7e4649e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AreaController
+  colorBar: {fileID: 0}
+  patterns: []
+  nonPatterns: []
+  activeStarCount: 10
+  stars: []
 --- !u!1001 &2525734218163536404
 PrefabInstance:
   m_ObjectHideFlags: 0
