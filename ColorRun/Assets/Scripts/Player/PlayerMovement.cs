@@ -1,10 +1,15 @@
 using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private readonly float minX = -2.75f;
     private readonly float maxX = 2.75f;
+
+   
+    [SerializeField]
+    private GameController gameController;
 
     [SerializeField]
     private Camera mainCamera;
@@ -22,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (gameController.IsGamePlay == false) return;
         MoveToX();
         MoveToY();
     }
