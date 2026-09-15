@@ -435,6 +435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400272279}
+  - component: {fileID: 400272281}
   - component: {fileID: 400272280}
   m_Layer: 0
   m_Name: Player
@@ -470,10 +471,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 400272278}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e26d241ec4df2a4789cc75a90194f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerColor
+  spriteRenderer: {fileID: 862956707}
+  trailRenderer: {fileID: 180886712}
+--- !u!114 &400272281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400272278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c2d51733f4537847911b29f831585cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  mainCamera: {fileID: 330585545}
+  mainCamera: {fileID: 0}
   yMoveSpeed: 2
 --- !u!1 &410087039
 GameObject:
@@ -614,6 +629,7 @@ GameObject:
   - component: {fileID: 417210956}
   - component: {fileID: 417210955}
   - component: {fileID: 417210954}
+  - component: {fileID: 417210957}
   m_Layer: 0
   m_Name: Collision
   m_TagString: Untagged
@@ -648,6 +664,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aace0eef675dbbe449e1227e30c099f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCollision
+  clips:
+  - {fileID: 8300000, guid: 945cea3a46527684fa3c478a69c31aa6, type: 3}
+  - {fileID: 8300000, guid: 069a5d21552e8d54da92b692d1918569, type: 3}
+  - {fileID: 8300000, guid: bbc126ba78b86854fa35cc40d172b6d5, type: 3}
+  - {fileID: 8300000, guid: 7c250e8408889d047a07a9aa4e7f90eb, type: 3}
+  playerColor: {fileID: 400272280}
   areaSpawner: {fileID: 1988092437}
 --- !u!58 &417210955
 CircleCollider2D:
@@ -712,6 +734,103 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!82 &417210957
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417210952}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,12 +1002,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaSpawner
   colors:
-  - {r: 1, g: 0.5882353, b: 0.5411765, a: 1}
-  - {r: 1, g: 0.78431374, b: 0.63529414, a: 1}
-  - {r: 1, g: 1, b: 0.70980394, a: 1}
-  - {r: 0.5921569, g: 0.75686276, b: 0.6627451, a: 1}
-  - {r: 0.67058825, g: 0.87058824, b: 0.9019608, a: 1}
-  - {r: 0.79607844, g: 0.6666667, b: 0.8, a: 1}
+  - {r: 0.6835539, g: 0.9150943, b: 0.09927912, a: 1}
+  - {r: 0.9622642, g: 0.031772893, b: 0.031772893, a: 1}
+  - {r: 0.23978122, g: 0.06674972, b: 0.9433962, a: 1}
+  - {r: 0.6310014, g: 0.5311944, b: 0.6509434, a: 1}
+  - {r: 0.036222856, g: 0.6981132, b: 0.063763805, a: 1}
+  - {r: 0.16811019, g: 0.9433962, b: 0.013349922, a: 1}
   areaPrefabs:
   - {fileID: 2289247579322614725, guid: 0c9de83b7e3df3d4f8d9599d597ab6d9, type: 3}
   - {fileID: 4876219707249553723, guid: 99b2f42c603962c48a90e73c5b5a9384, type: 3}
