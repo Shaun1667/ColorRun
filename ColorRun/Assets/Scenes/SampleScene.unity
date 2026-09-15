@@ -974,6 +974,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f3825da7b41a54492a95f84aed5477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaSpawner
+  colors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 0.002501011, g: 0, b: 1, a: 1}
+  - {r: 0.98465693, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.98902094, a: 1}
+  - {r: 0, g: 0.3301887, b: 0.3211247, a: 1}
   areaPrefabs:
   - {fileID: 2289247579322614725, guid: 0c9de83b7e3df3d4f8d9599d597ab6d9, type: 3}
   - {fileID: 4876219707249553723, guid: 99b2f42c603962c48a90e73c5b5a9384, type: 3}
