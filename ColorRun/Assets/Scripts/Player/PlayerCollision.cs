@@ -39,6 +39,21 @@ public class PlayerCollision : MonoBehaviour
             PlaySound(1);
             Destroy(collision.gameObject);
         }
+
+        if (collision.CompareTag("Obstacle"))
+        {
+            if (collision.GetComponent<SpriteRenderer>().color == playerColor.CurrentColor)
+            {
+                PlaySound(2);
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                PlaySound(3);
+                // 게임 오버 처리
+                Debug.Log("Game Over!");
+            }
+        }
     }
 
     public void PlaySound(int index)
