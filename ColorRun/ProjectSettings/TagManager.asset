@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ChangeColorBar
   - ChageColorBar
+  - Item
+  - Obstacle
   layers:
   - Default
   - TransparentFX
