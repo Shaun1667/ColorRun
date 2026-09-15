@@ -6,10 +6,10 @@ public class PlayerMovement : MonoBehaviour
     private readonly float minX = -2.75f;
     private readonly float maxX = 2.75f;
 
-    [SerializeField]
-    private Camera mainCamera;
-    [SerializeField]
-    private float yMoveSpeed = 2f; //전진 이동 속도
+    [SerializeField] private GameController gameController;
+
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private float yMoveSpeed = 2f; //전진 이동 속도
 
     private float startPointX;
     private float finalPointX;
@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (gameController.IsGamePlay == false) return;
         MoveToX();
         MoveToY();
     }
