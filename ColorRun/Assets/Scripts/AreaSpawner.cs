@@ -6,9 +6,13 @@ public class AreaSpawner : MonoBehaviour
     private readonly float areaLength = 18;
 
     [SerializeField]
+    private Color[] colors;
+
+
+    [SerializeField]
     private GameObject[] areaPrefabs;
     [SerializeField]
-    private Transform plyaer;
+    private Transform player;
     private int areaIndex = 0;
 
     private void Awake()
@@ -20,18 +24,19 @@ public class AreaSpawner : MonoBehaviour
     {
         int index = Random.Range(0, areaPrefabs.Length); // 0~4 0,1,2,3
         Vector3 position = Vector3.up * areaLength * areaIndex; //(0,1,0)*18*0~++
-        Instantiate(areaPrefabs[index], position, Quaternion.identity, transform);
+        GameObject area = Instantiate(areaPrefabs[index], position, Quaternion.identity, transform);
+        area.GetComponent<AreaController>().Setup(colors);
 
         areaIndex++;
     }
 
     public void DestroyArea()
     {
-        for(int i = 0; i < transform.childCount; ++i)
+        for (int i = 0; i < transform.childCount; ++i)
         {
             Transform child = transform.GetChild(i);
 
-            if(plyaer.position.y - child.position.y >= areaLength)
+            if (player.position.y - child.position.y >= areaLength)
             {
                 Destroy(child.gameObject);
             }
