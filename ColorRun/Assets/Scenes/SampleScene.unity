@@ -436,6 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400272279}
   - component: {fileID: 400272280}
+  - component: {fileID: 400272281}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -475,6 +476,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   mainCamera: {fileID: 330585545}
   yMoveSpeed: 2
+--- !u!114 &400272281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400272278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c2a3f0e933b37946961ddd8887edb44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerColor
+  spriteRenderer: {fileID: 862956707}
+  trailRenderer: {fileID: 180886712}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,6 +770,7 @@ GameObject:
   - component: {fileID: 1484617705}
   - component: {fileID: 1484617704}
   - component: {fileID: 1484617706}
+  - component: {fileID: 1484617707}
   m_Layer: 0
   m_Name: Collision
   m_TagString: Untagged
@@ -852,7 +868,110 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f75bee06b992c84998db149938c5804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCollision
+  clips:
+  - {fileID: 8300000, guid: d5bf3bde2563cdd43a3240db2e1649df, type: 3}
+  - {fileID: 8300000, guid: cf6440a8f6e8f5346b31bfe41bf4b09d, type: 3}
+  - {fileID: 8300000, guid: bbedee7da30140e46b0f85b8c73e9bf1, type: 3}
+  - {fileID: 8300000, guid: f3fa381e86544d9409ad8fc3914a3829, type: 3}
+  playerColor: {fileID: 400272281}
   areaSpawner: {fileID: 1667625393}
+--- !u!82 &1484617707
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484617702}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1667625391
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,12 +1017,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaSpawner
   colors:
-  - {r: 0.9056604, g: 0.11367158, b: 0.029903898, a: 0}
-  - {r: 1, g: 0.2048702, b: 0.0141509175, a: 0}
-  - {r: 1, g: 0.2563885, b: 0, a: 0}
-  - {r: 1, g: 0.75278413, b: 0, a: 0}
-  - {r: 0.7939932, g: 0.9528302, b: 0.112362035, a: 0}
-  - {r: 0.89178467, g: 1, b: 0, a: 0}
+  - {r: 0.9056604, g: 0.11367158, b: 0.029903898, a: 1}
+  - {r: 1, g: 0.2048702, b: 0.0141509175, a: 1}
+  - {r: 1, g: 0.2563885, b: 0, a: 1}
+  - {r: 1, g: 0.75278413, b: 0, a: 1}
+  - {r: 0.7939932, g: 0.9528302, b: 0.112362035, a: 1}
+  - {r: 0.89178467, g: 1, b: 0, a: 1}
   areaPrefabs:
   - {fileID: 2289247579322614725, guid: 0c9de83b7e3df3d4f8d9599d597ab6d9, type: 3}
   - {fileID: 4876219707249553723, guid: 99b2f42c603962c48a90e73c5b5a9384, type: 3}
