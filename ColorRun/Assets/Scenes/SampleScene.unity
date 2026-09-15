@@ -436,6 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400272279}
   - component: {fileID: 400272280}
+  - component: {fileID: 400272281}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -475,6 +476,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   mainCamera: {fileID: 330585545}
   yMoveSpeed: 2
+--- !u!114 &400272281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400272278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95767b47123ea16429e03d5eabf630eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerColor
+  spriteRenderer: {fileID: 862956707}
+  trailRenderer: {fileID: 180886712}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +664,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCollision
   areaSpawner: {fileID: 1988092437}
+  playerColor: {fileID: 0}
+  clips: []
 --- !u!58 &417210955
 CircleCollider2D:
   m_ObjectHideFlags: 0
