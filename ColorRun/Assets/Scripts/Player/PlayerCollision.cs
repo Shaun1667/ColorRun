@@ -1,16 +1,14 @@
 using UnityEngine;
 
+
 public class PlayerCollision : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerData playerData;
     [Header("Audio Clips")]
     [SerializeField]
     private AudioClip[] clips;
     private AudioSource audioSource;
-
-    private void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
 
     [SerializeField]
     private PlayerColor playerColor;
@@ -18,7 +16,10 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField]
     private AreaSpawner areaSpawner;
 
-
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,12 +42,15 @@ public class PlayerCollision : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        if(collision.CompareTag("Obstacle"))
+        if (collision.CompareTag("Obstacle"))
         {
-            if(collision.GetComponent<SpriteRenderer>().color == playerColor.CurrentColor)
+            if (collision.GetComponent<SpriteRenderer>().color == playerColor.CurrentColor)
             {
                 PlaySound(2);
                 Destroy(collision.gameObject);
+                playerData.CurrentScore++; //플레이어 점수 증가
+                Debug.Log("점수" + playerData.CurrentScore);
+
             }
             else
             {
