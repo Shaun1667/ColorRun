@@ -38,6 +38,13 @@ public class AreaController : MonoBehaviour
         for (int i = 0; i < stars.Length; ++i)
         {
             stars[starIndex[i]].SetActive(true);
+
+            if (activeStarCount <= i + 1)
+            {
+                break;
+            }
+
+
         }
     }
 
