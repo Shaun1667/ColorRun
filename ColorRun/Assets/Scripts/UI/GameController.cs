@@ -4,6 +4,8 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [SerializeField]
+    private PlayerData playerData;
+    [SerializeField]
     private UIController uiController;
 
     public bool isGamePlay { get; private set; } = false;
@@ -28,5 +30,36 @@ public class GameController : MonoBehaviour
         uiController.GameStart();
 
     }
+
+    public void GameOver()
+    {
+        isGamePlay = false;
+        StartCoroutine(nameof(OnGameOver));
+    }
+
+    private IEnumerator OnGameOver()
+    {
+        float percent = 0;
+        float time = 1.5f;
+
+        while(percent<time)
+        {
+            percent += Time.deltaTime;
+            yield return null;
+        }
+
+        bool isBestScore = false;
+
+        int bestScore = PlayerPrefs.GetInt(Constants.BESTSCORE);
+
+        if(bestScore < playerData.CurrentScore)
+        {
+            isBestScore = true;
+            bestScore = playerData.CurrentScore;
+            PlayerPrefs.SetInt(Constants.BESTSCORE, bestScore);
+        }
+        uiController.GameOver(playerData.CurrentScore, bestScore, isBestScore);
+    }
+
 }
 

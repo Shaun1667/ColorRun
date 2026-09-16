@@ -15,7 +15,7 @@ public class PatternController : MonoBehaviour
 
         }
 
-        if(isColorControl)
+        if (isColorControl)
         {
             int areaColorIndex = Random.Range(0, renderers.Length);
             renderers[areaColorIndex].color = areaColor;
