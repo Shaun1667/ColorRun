@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
+    
     [Header("GameOver")]
     [SerializeField]
     private GameObject gameOverPanel;
