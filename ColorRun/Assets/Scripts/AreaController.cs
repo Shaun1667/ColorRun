@@ -30,12 +30,13 @@ public class AreaController : MonoBehaviour
         }
 
         //별 아이템 오브젝트 활성/비활성 설정
-        int[] starIndex = Utils.RandomNumerics(stars.Length, stars.Length);
+        int count = Mathf.Min(activeStarCount, stars.Length);
+        int[] starIndex = Utils.RandomNumerics(stars.Length, count);
         for (int i = 0; i < stars.Length; ++i)
         {
             stars[i].SetActive(false);
         }
-        for (int i = 0; i < stars.Length; ++i)
+        for (int i = 0; i < count; ++i)
         {
             stars[starIndex[i]].SetActive(true);
         }

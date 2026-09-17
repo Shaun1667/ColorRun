@@ -35,7 +35,7 @@ public class MoveHorizontal : MonoBehaviour
     {
         float percent = 0;
         float distance = Mathf.Abs(end - start);
-        float moveTime = distance * unitPerSecond;
+        float moveTime = distance / unitPerSecond;
 
         while(percent < 1)
         {
@@ -43,6 +43,7 @@ public class MoveHorizontal : MonoBehaviour
 
             Vector3 position = transform.position;
             position.x = Mathf.Lerp(start, end, percent);
+            transform.position = position;
 
             yield return null;
         }

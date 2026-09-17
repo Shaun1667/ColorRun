@@ -8,6 +8,7 @@ public class AreaSpawner : MonoBehaviour
     [SerializeField]
     private Color[] colors;
 
+
     [SerializeField]
     private GameObject[] areaPrefabs;
     [SerializeField]
