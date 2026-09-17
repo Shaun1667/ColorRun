@@ -50,7 +50,7 @@ public class UIController : MonoBehaviour
 
         textGameOverCurrentScore.text = $"Score\n{current:D4}";
         string bestScoreText = (isBest == true) ? $"Best(New)" : $"Best" ;
-        textGameOverBestScore.text = $"{bestScoreText}\n{best:MD4}";
+        textGameOverBestScore.text = $"{bestScoreText}\n{best:D4}";
 
     }
 
