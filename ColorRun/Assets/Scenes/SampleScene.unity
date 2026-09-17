@@ -1634,7 +1634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aace0eef675dbbe449e1227e30c099f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCollision
-  onPlyaerDie:
+  onPlayerDie:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 862956705}
@@ -3288,6 +3288,7 @@ GameObject:
   - component: {fileID: 1103752434}
   - component: {fileID: 1103752436}
   - component: {fileID: 1103752435}
+  - component: {fileID: 1103752437}
   m_Layer: 5
   m_Name: SkinShop
   m_TagString: Untagged
@@ -3356,6 +3357,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103752433}
   m_CullTransparentMesh: 1
+--- !u!114 &1103752437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103752433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7859cb8e688c71c4886dc339fc3d4a2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UISkinShop
+  skinPrefab: {fileID: -830633885282620373, guid: c9efc0c22936682419d920fd32ac9ffa, type: 3}
+  skinParent: {fileID: 157053272}
+  textStarCount: {fileID: 1492963539}
 --- !u!1 &1216790486
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class PlayerCollision : MonoBehaviour
     private Collider2D playerCollider;
     */
     [SerializeField]
-    private UnityEvent onPlyaerDie;
+    private UnityEvent onPlayerDie;
     [SerializeField]
     private ParticleSystem playerDieEffect;
 
@@ -85,7 +85,7 @@ public class PlayerCollision : MonoBehaviour
                 //GameController에 있는 GameOver()메소드 호출
                 gameController.GameOver();
                 */
-                onPlyaerDie?.Invoke();
+                onPlayerDie?.Invoke();
             }
         }
     }

@@ -84,6 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 732341925729322414}
+  - component: {fileID: -830633885282620373}
   m_Layer: 5
   m_Name: Skin
   m_TagString: Untagged
@@ -112,6 +113,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &-830633885282620373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861244383216812037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4d5a4dff2fd08489f33763d67e049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UISkin
 --- !u!1 &5139854462227417505
 GameObject:
   m_ObjectHideFlags: 0

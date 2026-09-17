@@ -49,7 +49,7 @@ public class GameController : MonoBehaviour
         }
 
         //현재 스테이지에서 획득한 별 개수 추가
-        PlayerPrefs.SetInt(Constants.STARCOUNT, PlayerPrefs.GetInt(Constants.STARCOUNT + playerData.CurrentStarCount));
+        PlayerPrefs.SetInt(Constants.STARCOUNT, PlayerPrefs.GetInt(Constants.STARCOUNT) + playerData.CurrentStarCount);
 
         bool isBestScore = false;
 
