@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class PlayerCollision : MonoBehaviour
 {
+    /*
     [Header("Player Die")]
     [SerializeField]
     private GameController gameController;
@@ -10,6 +12,10 @@ public class PlayerCollision : MonoBehaviour
     private GameObject playerRenderer;
     [SerializeField]
     private Collider2D playercolider;
+    */
+    [SerializeField]
+    private UnityEvent onPlayerDie;
+
     [SerializeField]
     private ParticleSystem playerDieEffect;
     [SerializeField]
@@ -49,6 +55,7 @@ public class PlayerCollision : MonoBehaviour
         {
             PlaySound(1);
             Destroy(collision.gameObject);
+            playerData.CurrentStarCount++; //획득한 별 갯수 증가
         }
 
         if (collision.CompareTag("Obstacle"))
@@ -68,13 +75,16 @@ public class PlayerCollision : MonoBehaviour
                 //플레이어 사망 효과 색상 설정
                 ParticleSystem.MainModule main = playerDieEffect.main;
                 main.startColor = playerColor.CurrentColor;
-                //플레이어 렌더러, 충돌, 컴포넌트 비활성화
-                playerRenderer.SetActive(false);
-                playercolider.enabled = false;
-                //플레이어 사망 효과 재생
-                playerDieEffect.gameObject.SetActive(true);
-                //GAMEController에 있는 GameOver()메소드 호출
-                gameController.GameOver();
+                /*
+                 //플레이어 렌더러, 충돌, 컴포넌트 비활성화
+                 playerRenderer.SetActive(false);
+                 playercolider.enabled = false;
+                 //플레이어 사망 효과 재생
+                 playerDieEffect.gameObject.SetActive(true);
+                 //GAMEController에 있는 GameOver()메소드 호출
+                 gameController.GameOver();
+                */
+                onPlayerDie?.Invoke();
             }
         }
     }
