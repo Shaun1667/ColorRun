@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2e5fc1099618a46b46e7c01c77881d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatternController
-  isColorControl: 0
+  isColorControl: 1
 --- !u!1001 &1350609024525806637
 PrefabInstance:
   m_ObjectHideFlags: 0
