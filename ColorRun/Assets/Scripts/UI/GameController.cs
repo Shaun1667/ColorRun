@@ -42,11 +42,14 @@ public class GameController : MonoBehaviour
         float time = 1;
 
         while (percent < time)
+
         {
             percent += Time.deltaTime;
             yield return null;
         }
 
+        //현재 스테이지에서 획득한 별 개수 추가
+        PlayerPrefs.SetInt(Constants.STARCOUNT, PlayerPrefs.GetInt(Constants.STARCOUNT) + playerData.CurrentStarCount);
         bool isBestScore = false;
 
         int bestScore = PlayerPrefs.GetInt(Constants.BESTSCORE);

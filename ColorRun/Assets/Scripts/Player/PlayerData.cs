@@ -7,7 +7,6 @@ public class PlayerData : MonoBehaviour
     private UnityEvent<int> onChangedCurrentScore;
 
     private int currentScore = 0;
-
     public int CurrentScore
     {
         set
@@ -16,5 +15,12 @@ public class PlayerData : MonoBehaviour
             onChangedCurrentScore?.Invoke(currentScore);
         }
         get => currentScore;
+    }
+
+    private int currentStarCount = 0;
+    public int CurrentStarCount
+    {
+        set => currentStarCount = Mathf.Max(0, value);
+        get => currentStarCount;
     }
 }
