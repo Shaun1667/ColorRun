@@ -1,5 +1,8 @@
+using System;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerCollision : MonoBehaviour
 {
@@ -7,18 +10,29 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField]
     private AudioClip[] clips;
     private AudioSource audioSource;
+    [SerializeField]
+    private PlayerData playerData;
+    [SerializeField]
+    private PlayerColor playerColor;
+    [SerializeField]
+    private AreaSpawner areaSpawner;
+    /*[Header("Player Die")]
+    [SerializeField]
+    private GameController gameController;
+    [SerializeField]
+    private GameObject playerRenderer;
+    [SerializeField]
+    private Collider2D playerCollider;*/
+    [SerializeField]
+    private UnityEvent onPlayerDie;
+    [SerializeField]
+    private ParticleSystem playerDieEffect;
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();    
+        audioSource = GetComponent<AudioSource>();
     }
 
-    [SerializeField]
-    private PlayerColor playerColor;
-
-    [SerializeField]
-    private AreaSpawner areaSpawner;
-    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("ChangeColorBar"))
@@ -41,6 +55,7 @@ public class PlayerCollision : MonoBehaviour
             PlaySound(2);           
             // 충돌한 물체를 삭제
             Destroy(collision.gameObject);
+            playerData.CurrentStarCount++;
         }
         if (collision.CompareTag("Obstacle"))
         {
@@ -49,11 +64,25 @@ public class PlayerCollision : MonoBehaviour
                 PlaySound(1);
                 // 충돌한 물체를 삭제
                 Destroy(collision.gameObject);
+                playerData.CurrentScore++; //플레이어 점수 증가
             }
             else
             {
                 PlaySound(0);
                 Debug.Log("Player Die");
+                //플레이어 사망 효과 색상 설정
+                ParticleSystem.MainModule main = playerDieEffect.main;
+                main.startColor = playerColor.CurrentColor;
+                /*
+                 //플레이어 렌더러, 충돌 컴퍼넌트 비활성화
+                 playerRenderer.SetActive(false);
+                 playerCollider.enabled = false;
+                 //플레이어 사망 효과 재생
+                 playerDieEffect.gameObject.SetActive(true);
+                 //GameController에 있는 GameOver()메소드 호출
+                 gameController.GameOver();
+                */
+                onPlayerDie?.Invoke();
             }
         }
 
