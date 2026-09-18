@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3208549716759040900, guid: 4b10eda469caa9c4e9716e1df64186f3, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -374,3 +374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df53e6a30c246a34ca4d735a39664ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UISkin
+  skinImage: {fileID: 286381979321491867}
+  priceGameObject: {fileID: 2801937942111334424}
+  skinPrice: {fileID: 7094328452481690572}
