@@ -146,8 +146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 17.5599}
-  m_SizeDelta: {x: 0, y: -35.1197}
+  m_AnchoredPosition: {x: -0.000022888184, y: 14.2}
+  m_SizeDelta: {x: -26.138, y: -50.4205}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5326217113868941224
 CanvasRenderer:
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1007663006, guid: 75d157afc9f96734f83868a77997fc50, type: 3}
+  m_Sprite: {fileID: 3022283953391120237, guid: 0e37ab423070d82469da91fc5d315fd3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -237,6 +237,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e674293f59bd67d42a33eee73dd91da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UISkin
+  skinImage: {fileID: 989842509256525520}
+  priceGameObject: {fileID: 1591946474594771327}
+  skinPrice: {fileID: 4659313305630087338}
 --- !u!1 &8935693193198471068
 GameObject:
   m_ObjectHideFlags: 0
