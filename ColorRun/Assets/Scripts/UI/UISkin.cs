@@ -1,16 +1,36 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class UISkin : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField]
+    private Image skinImage;
+    [SerializeField]
+    private GameObject priceGameObject;
+    [SerializeField]
+    private TextMeshProUGUI skinPrice;
+
+    private int price;
+    private Sprite sprite;
+
+
+    public void Setup(int price, Sprite sprite)
     {
-        
+        this.price = price;
+        this.sprite = sprite;
+
+        skinPrice.text = this.price.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetActive()
     {
-        
+        skinImage.sprite = sprite;
+        priceGameObject.SetActive(true);
+    }
+
+    public void SetColor(Color color)
+    {
+        skinImage.color = color;
     }
 }

@@ -12,7 +12,12 @@ public class UISkinShop : MonoBehaviour
     private int skinCount; //스킨 개수
     private UISkin[] skinList; //스킨 UI 목록
 
-    private void Awake()
+    private int currentSkinIndex = 0;
+
+    private readonly Color selectedColor = Color.white;
+    private readonly Color notSelectedColor = Color.gray;
+
+    private void Awake()    
     {
         Sprite[] skinSprites = Resources.LoadAll<Sprite>(Constants.SKIN_PATH);
         skinCount = skinSprites.Length;
@@ -22,6 +27,11 @@ public class UISkinShop : MonoBehaviour
         {
             //스킨 UI 생성
             skinList[i] = Instantiate(skinPrefab, skinParent);
+
+            if (int.TryParse(skinSprites[i].name.Split('_')[2], out int price))
+            {
+                skinList[i].Setup(price, skinSprites[i]);
+            }
         }
     }
 
