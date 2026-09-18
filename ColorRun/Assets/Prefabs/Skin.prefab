@@ -187,6 +187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c54bf4898f47a946bf493db5bd63602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UiSkin
+  skinImage: {fileID: 72790705388077757}
+  priceGameObject: {fileID: 8678263087640644324}
+  skinPrice: {fileID: 7059164456025230053}
 --- !u!1 &5492580389427291369
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -239861270, guid: 8a8097c4faf286c4194d187e366b3ef6, type: 3}
+  m_Sprite: {fileID: 3022283953391120237, guid: 95d6a4d22f9ab7147ad734e05682bc94, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
