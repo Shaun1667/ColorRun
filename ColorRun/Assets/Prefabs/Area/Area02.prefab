@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7792630712701866507}
-  - component: {fileID: 4270392568814552896}
+  - component: {fileID: 4265677381184139350}
   m_Layer: 0
   m_Name: Area02
   m_TagString: Untagged
@@ -44,7 +44,7 @@ Transform:
   - {fileID: 6473779289692895949}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4270392568814552896
+--- !u!114 &4265677381184139350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -53,15 +53,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4876219707249553723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80b6fe6f9ff74e643a514c65863678f3, type: 3}
+  m_Script: {fileID: 11500000, guid: eb2ea374294b61e4ba7fded23b90cbd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaController
   colorBar: {fileID: 163663822430351162}
   patterns:
-  - {fileID: 903368753034220536}
-  - {fileID: 1819619814899678589}
-  - {fileID: 6957894724095074889}
-  - {fileID: 95999502365703839}
+  - {fileID: 799580954431800194}
+  - {fileID: 942964761810018829}
+  - {fileID: 2304087639102970434}
+  - {fileID: 3033733678007654782}
   nonPatterns: []
   activeStarCount: 10
   stars:
@@ -400,15 +400,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90925858ea957df4e8f64d61d34a1bf2, type: 3}
---- !u!114 &903368753034220536 stripped
+--- !u!114 &799580954431800194 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -5121679201129549005, guid: 90925858ea957df4e8f64d61d34a1bf2, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4575063878067757897, guid: 90925858ea957df4e8f64d61d34a1bf2, type: 3}
   m_PrefabInstance: {fileID: 3775506322684928203}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a2e5fc1099618a46b46e7c01c77881d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0531980d4e6a081429eafc2ff077afc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatternController
 --- !u!4 &4627139969515904902 stripped
@@ -566,6 +566,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5948807557563551231, guid: b86529bd4b933cd44984d54cd6445e99, type: 3}
   m_PrefabInstance: {fileID: 5099598127178379358}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3033733678007654782 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7844309366181194016, guid: b86529bd4b933cd44984d54cd6445e99, type: 3}
+  m_PrefabInstance: {fileID: 5099598127178379358}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0531980d4e6a081429eafc2ff077afc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PatternController
 --- !u!1001 &5269659571300443373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -955,6 +966,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38381506486390f4cb6b51729484074f, type: 3}
+--- !u!114 &2304087639102970434 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2212410061757335518, guid: 38381506486390f4cb6b51729484074f, type: 3}
+  m_PrefabInstance: {fileID: 9129415767277560416}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0531980d4e6a081429eafc2ff077afc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PatternController
 --- !u!4 &2539167142615065315 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6741567951721709699, guid: 38381506486390f4cb6b51729484074f, type: 3}
@@ -1033,14 +1055,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8787598362460482300, guid: 83e56302ad7daa143b53c8ed23aeaff8, type: 3}
   m_PrefabInstance: {fileID: 9205290421572251403}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1819619814899678589 stripped
+--- !u!114 &942964761810018829 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -1801628651984924042, guid: 83e56302ad7daa143b53c8ed23aeaff8, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8262372114644536582, guid: 83e56302ad7daa143b53c8ed23aeaff8, type: 3}
   m_PrefabInstance: {fileID: 9205290421572251403}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a2e5fc1099618a46b46e7c01c77881d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0531980d4e6a081429eafc2ff077afc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatternController

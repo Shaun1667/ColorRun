@@ -7,7 +7,8 @@ public class PlayerColor : MonoBehaviour
     [SerializeField]
     private TrailRenderer trailRenderer;
 
-    public Color CurrentColor { get; private set; }
+    public Color CurrentColor {  get; private set; }
+
 
     public void SetColor(Color color)
     {

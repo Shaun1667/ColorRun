@@ -25,10 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(gameController.isGamePlay == false)
-        {
-            return;
-        }
+        if (gameController.IsGamePlay == false) return;
         MoveToX();
         MoveToY();
     }

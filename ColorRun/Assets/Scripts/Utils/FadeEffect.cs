@@ -20,6 +20,7 @@ public static class FadeEffect
             target.color = color;
 
             yield return null;
+
         }
 
         action?.Invoke();
@@ -40,9 +41,9 @@ public static class FadeEffect
             target.color = color;
 
             yield return null;
+            
         }
 
         action?.Invoke();
     }
-
 }

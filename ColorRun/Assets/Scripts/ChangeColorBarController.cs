@@ -49,11 +49,9 @@ public class ChangeColorBarController : MonoBehaviour
     public void SetColor(Color color)
     {
         CurrentColor = color;
-
         for (int i = 0; i < renderers.Length; i++)
         {
             renderers[i].color = color;
         }
     }
-
 }

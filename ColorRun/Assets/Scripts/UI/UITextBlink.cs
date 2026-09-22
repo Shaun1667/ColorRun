@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-
 public class UITextBlink : MonoBehaviour
 {
     [SerializeField]
@@ -25,10 +24,10 @@ public class UITextBlink : MonoBehaviour
 
     private IEnumerator OnBlink()
     {
-        while (true)
+        while(true)
         {
-            yield return StartCoroutine(FadeEffect.Fade(text, 1f, 0f, fadeTime));
-            yield return StartCoroutine(FadeEffect.Fade(text, 0f, 1f, fadeTime));
+            yield return StartCoroutine(FadeEffect.Fade(text, 1, 0, fadeTime));
+            yield return StartCoroutine(FadeEffect.Fade(text, 0, 1, fadeTime));
         }
     }
 }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 608688682595157108}
-  - component: {fileID: 8421199798445533689}
+  - component: {fileID: -440742520445992574}
   m_Layer: 0
   m_Name: Pattern14
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 4953603508606558373}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8421199798445533689
+--- !u!114 &-440742520445992574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,7 +43,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3690181655907126113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a2e5fc1099618a46b46e7c01c77881d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0531980d4e6a081429eafc2ff077afc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatternController
   isColorControl: 0

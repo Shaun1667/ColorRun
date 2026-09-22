@@ -15,11 +15,10 @@ public class PatternController : MonoBehaviour
 
         }
 
-        if (isColorControl)
+        if(isColorControl)
         {
             int areaColorIndex = Random.Range(0, renderers.Length);
             renderers[areaColorIndex].color = areaColor;
-            Debug.Log($"[Target Color Applied] 오브젝트: {renderers[areaColorIndex].gameObject.name}, 색상: {areaColor}");
         }
     }
 }
