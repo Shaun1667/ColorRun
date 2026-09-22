@@ -36,10 +36,12 @@ public class AreaSpawner : MonoBehaviour
         {
             Transform child = transform.GetChild(i);
 
-            if(player.position.y - child.position.y >= areaLength)
+            if (player.position.y - child.position.y >= areaLength)
             {
                 Destroy(child.gameObject);
             }
         }
+
     }
+
 }
