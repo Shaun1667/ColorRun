@@ -26,9 +26,11 @@ public class UISkinShop : MonoBehaviour
 
     private void Awake()    
     {
+        /*
         //Debug Test
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt(Constants.STARCOUNT, 1000);
+        */
 
         audioSource = GetComponent<AudioSource>();
 
