@@ -67,6 +67,7 @@ public class PlayerCollision : MonoBehaviour
                 Destroy(collision.gameObject);
                 playerData.CurrentScore++; // 플레이어 점수 증가
                 Debug.Log("점수" + playerData.CurrentScore);
+                playerData.AddDestroyObjectCountAt(playerColor.CurrentColor);
             }
             else
             {

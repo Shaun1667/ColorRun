@@ -16,6 +16,7 @@ public class AreaSpawner : MonoBehaviour
 
     private void Awake()
     {
+        player.GetComponent<PlayerData>().Setup(colors);
         SpawnArea();
     }
 
