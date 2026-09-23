@@ -162,6 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 647824a1654bbaa4d806fde42c3a9d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UISkin
+  skinImage: {fileID: 5846523983722333897}
+  priceGameObject: {fileID: 1548340805975706304}
+  skinPrice: {fileID: 5689443297463518700}
 --- !u!1 &5302463933747074392
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +337,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 20}
-  m_SizeDelta: {x: 0, y: -40}
+  m_SizeDelta: {x: -40, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &110908458122531228
 CanvasRenderer:
@@ -364,7 +367,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -651439734, guid: 4e90ccfeab6694848af356ad7acb830a, type: 3}
+  m_Sprite: {fileID: 3022283953391120237, guid: d1f3a26a8838b224686f23f6c7abcf39, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -1,6 +1,6 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
-
 
 public class PlayerCollision : MonoBehaviour
 {
@@ -14,7 +14,9 @@ public class PlayerCollision : MonoBehaviour
     private Collider2D playerCollider;
     */
     [SerializeField]
-    private UnityEvent onPiayerDie;
+    private PlayerMovement playerMovement;
+    [SerializeField]
+    private UnityEvent onPlayerDie;
 
     [SerializeField]
     private ParticleSystem playerDieEffect;
@@ -48,6 +50,9 @@ public class PlayerCollision : MonoBehaviour
             areaSpawner.DestroyArea();
             //구역 생성
             areaSpawner.SpawnArea();
+            //플레이어 이동 속도 증가
+            playerMovement.IncreaseMoveSpeed();
+
             //충돌한 물체를 삭제...
             Destroy(collision.gameObject);
         }
@@ -56,7 +61,7 @@ public class PlayerCollision : MonoBehaviour
         {
             PlaySound(1);
             Destroy(collision.gameObject);
-            playerData.CurrentStarCount++; //별 개수 증가
+            playerData.CurrentStarCount++; //별 획득 개수 증가
         }
 
         if (collision.CompareTag("Obstacle"))
@@ -64,6 +69,7 @@ public class PlayerCollision : MonoBehaviour
             if (collision.GetComponent<SpriteRenderer>().color == playerColor.CurrentColor)
             {
                 PlaySound(2);
+                playerData.AddDestroyObjectCountAt(playerColor.CurrentColor);
                 Destroy(collision.gameObject);
                 playerData.CurrentScore++; //플레이어 점수 증가
                 Debug.Log("점수" + playerData.CurrentScore);
@@ -86,8 +92,7 @@ public class PlayerCollision : MonoBehaviour
                 //GameController에 있는 GameOver()메소드 호출
                 gameController.GameOver();
                 */
-                onPiayerDie?.Invoke();
-
+                onPlayerDie?.Invoke();
             }
         }
     }

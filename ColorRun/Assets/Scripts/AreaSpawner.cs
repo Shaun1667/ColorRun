@@ -13,10 +13,16 @@ public class AreaSpawner : MonoBehaviour
     private GameObject[] areaPrefabs;
     [SerializeField]
     private Transform player;
+
+    [SerializeField]
+    private UIArchive uIArchive;
+
     private int areaIndex = 0;
 
     private void Awake()
     {
+        player.GetComponent<PlayerData>().Setup(colors);
+        uIArchive.Setup(colors);
         SpawnArea();
     }
 
