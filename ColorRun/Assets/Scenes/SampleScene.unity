@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 111184920}
   - component: {fileID: 111184919}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CountAll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1791,6 +1791,7 @@ MonoBehaviour:
   gameController: {fileID: 1216790489}
   mainCamera: {fileID: 330585545}
   yMoveSpeed: 2
+  speedAmount: 0.01
 --- !u!114 &400272281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2006,6 +2007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aace0eef675dbbe449e1227e30c099f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCollision
+  playerMovement: {fileID: 400272280}
   onPlayerDie:
     m_PersistentCalls:
       m_Calls:
@@ -7875,6 +7877,7 @@ MonoBehaviour:
   - {fileID: 238549880815530693, guid: 06b4d647b7802f54585aebc5fc8e1f98, type: 3}
   - {fileID: 6089217811526447903, guid: dbe1886c173b36846ae92a31e80a9623, type: 3}
   player: {fileID: 400272279}
+  uIArchive: {fileID: 2039730325}
 --- !u!4 &1988092438
 Transform:
   m_ObjectHideFlags: 0
@@ -8008,6 +8011,7 @@ GameObject:
   - component: {fileID: 2039730322}
   - component: {fileID: 2039730324}
   - component: {fileID: 2039730323}
+  - component: {fileID: 2039730325}
   m_Layer: 5
   m_Name: Archive
   m_TagString: Untagged
@@ -8075,6 +8079,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039730321}
   m_CullTransparentMesh: 1
+--- !u!114 &2039730325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039730321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5b20b3bbffeac4e9fe3fad953adcf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIArchive
+  textStarData: {fileID: 196455120}
+  textGamePlayData: {fileID: 733659426}
+  textDestroyAllObject: {fileID: 111184919}
+  colorPrefab: {fileID: 32154656084366522, guid: 4b547a4d8c0e06a428a30af14c370775, type: 3}
+  colorParent: {fileID: 145031513}
+  playerData: {fileID: 400272282}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

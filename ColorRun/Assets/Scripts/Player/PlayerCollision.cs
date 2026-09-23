@@ -13,9 +13,11 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField]
     private Collider2D playerCollider;
     */
-    
+    [SerializeField]
+    private PlayerMovement playerMovement;
     [SerializeField]
     private UnityEvent onPlayerDie;
+
     [SerializeField]
     private ParticleSystem playerDieEffect;
 
@@ -48,6 +50,9 @@ public class PlayerCollision : MonoBehaviour
             areaSpawner.DestroyArea();
             //구역 생성
             areaSpawner.SpawnArea();
+            //플레이어 이동 속도 증가
+            playerMovement.IncreaseMoveSpeed();
+
             //충돌한 물체를 삭제...
             Destroy(collision.gameObject);
         }
