@@ -26,10 +26,11 @@ public class UISkinShop : MonoBehaviour
 
     private void Awake()    
     {
+        /*
         //Debug Test
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt(Constants.STARCOUNT, 1000);
-
+        */
         audioSource = GetComponent<AudioSource>();
 
         Sprite[] skinSprites = Resources.LoadAll<Sprite>(Constants.SKIN_PATH);
@@ -56,13 +57,7 @@ public class UISkinShop : MonoBehaviour
         //기본 스킨(Skin_00)은 항상 소유 상태로 설정
         PlayerPrefs.SetInt($"{Constants.IS_OWNED_SKIN_}0", 1);
 
-        /*
-        //디버그 테스트
-        for(int i = 1; i<7;i++)
-        {
-            PlayerPrefs.SetInt($"{Constants.IS_OWNED_SKIN_}{i}", 1);
-        }
-        */
+       
 
         //현재 소유한 스킨 UI만 스킨 아이콘 설정
         //현재 소유한 모든 스튼 UI의 색상을 notSelectedColor로 설정
