@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float yMoveSpeed = 2f; //전진 이동 속도
 
+    private float speedAmount = 0.01f; //이동 속도 증가량
+
     private float startPointX;
     private float finalPointX;
 
@@ -54,5 +56,9 @@ public class PlayerMovement : MonoBehaviour
         transform.position += Vector3.up * yMoveSpeed * Time.deltaTime;
     }
 
-
+    public void IncreaseMoveSpeed()
+    {
+        yMoveSpeed += speedAmount;
+        Debug.Log($"이동속도 : {yMoveSpeed}");
+    }
 }
