@@ -1,17 +1,16 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerCollision : MonoBehaviour
 {
-    [Header("Player Die")]
     [SerializeField]
-    private GameObject playerRenderer;
-    [SerializeField]
-    private Collider2D playerCollider;
+    private UnityEvent onPlayerDie;
+
     [SerializeField]
     private ParticleSystem playerDieEffect;
+
     [SerializeField]
-    private GameController gameController;
+    private PlayerMovement playerMovement;
 
     [SerializeField]
     private PlayerData playerData;
@@ -47,6 +46,9 @@ public class PlayerCollision : MonoBehaviour
             //구역 생성
             areaSpawner.SpawnArea();
 
+            //플레이어 이동 속도 증가
+            playerMovement.IncreaseMoveSpeed();
+
             //충돌한 물체를 삭제...
             Destroy(other.gameObject);
         }
@@ -54,7 +56,8 @@ public class PlayerCollision : MonoBehaviour
         if (other.CompareTag("Item"))
         {
             PlaySound(1);
-            Destroy(other.gameObject); 
+            Destroy(other.gameObject);
+            playerData.CurrentStar++; // 플레이어 점수 증가
         }
 
         if (other.CompareTag("Obstacle"))
@@ -64,6 +67,7 @@ public class PlayerCollision : MonoBehaviour
                 PlaySound(2);
                 Destroy(other.gameObject);
                 playerData.CurrentScore++; // 플레이어 점수 증가
+                playerData.AddDestroyObjectCountAt(playerColor.CurrentColor);
             }
             else
             {
@@ -72,14 +76,7 @@ public class PlayerCollision : MonoBehaviour
                 //플레이어 사망 효과 색상 설정
                 ParticleSystem.MainModule main = playerDieEffect.main;
                 main.startColor = playerColor.CurrentColor;
-                //플레이어 렌더러, 충돌 컴포넌트 비활성화
-                playerRenderer.SetActive(false);
-                playerCollider.enabled = false;
-                //플레이어 사망 효과 재생
-                playerDieEffect.gameObject.SetActive(true);
-                //GameController에 있는 GameOver()메소드 호출
-                gameController.GameOver();
-                
+                onPlayerDie?.Invoke();
             }
 
         }
