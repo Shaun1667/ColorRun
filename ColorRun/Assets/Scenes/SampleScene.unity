@@ -1693,6 +1693,7 @@ MonoBehaviour:
   gameController: {fileID: 1216790489}
   mainCamera: {fileID: 330585545}
   yMoveSpeed: 2
+  speedAmount: 0.01
 --- !u!114 &400272281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1908,6 +1909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aace0eef675dbbe449e1227e30c099f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCollision
+  playerMovement: {fileID: 400272280}
   onPlayerDie:
     m_PersistentCalls:
       m_Calls:
@@ -2900,6 +2902,7 @@ GameObject:
   - component: {fileID: 753051477}
   - component: {fileID: 753051479}
   - component: {fileID: 753051478}
+  - component: {fileID: 753051480}
   m_Layer: 5
   m_Name: Archive
   m_TagString: Untagged
@@ -2967,6 +2970,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753051476}
   m_CullTransparentMesh: 1
+--- !u!114 &753051480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753051476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db36077b0ee52724c80105e51b0edb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIArchive
+  textStarData: {fileID: 1333703215}
+  textGamePlayData: {fileID: 1772085534}
+  textDestroyAllObject: {fileID: 156322496}
+  colorPrefab: {fileID: 3422253227620927549, guid: ad54e4bfcbf3ca64bbfc75193faf8832, type: 3}
+  colorParent: {fileID: 2093695388}
+  playerData: {fileID: 400272282}
 --- !u!1 &767325400
 GameObject:
   m_ObjectHideFlags: 0
@@ -7844,18 +7865,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaSpawner
   colors:
-  - {r: 1, g: 0.5882353, b: 0.5411765, a: 1}
-  - {r: 1, g: 0.78431374, b: 0.63529414, a: 1}
-  - {r: 1, g: 1, b: 0.70980394, a: 1}
-  - {r: 0.5921569, g: 0.75686276, b: 0.6627451, a: 1}
-  - {r: 0.67058825, g: 0.87058824, b: 0.9019608, a: 1}
-  - {r: 0.79607844, g: 0.6666667, b: 0.8, a: 1}
+  - {r: 0.990566, g: 0.39093092, b: 0.3224012, a: 1}
+  - {r: 0.9622642, g: 0.5515595, b: 0.26779994, a: 1}
+  - {r: 0.9716981, g: 0.9716981, b: 0.371262, a: 1}
+  - {r: 0.33784264, g: 0.9811321, b: 0.61353815, a: 1}
+  - {r: 0.3915094, g: 0.9174928, b: 1, a: 1}
+  - {r: 0.98099333, g: 0.3537736, b: 1, a: 1}
   areaPrefabs:
   - {fileID: 2289247579322614725, guid: 0c9de83b7e3df3d4f8d9599d597ab6d9, type: 3}
   - {fileID: 4876219707249553723, guid: 99b2f42c603962c48a90e73c5b5a9384, type: 3}
   - {fileID: 238549880815530693, guid: 06b4d647b7802f54585aebc5fc8e1f98, type: 3}
   - {fileID: 6089217811526447903, guid: dbe1886c173b36846ae92a31e80a9623, type: 3}
   player: {fileID: 400272279}
+  uiArchive: {fileID: 753051480}
 --- !u!4 &1988092438
 Transform:
   m_ObjectHideFlags: 0
