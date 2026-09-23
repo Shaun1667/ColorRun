@@ -1252,6 +1252,7 @@ MonoBehaviour:
   gameController: {fileID: 501945558}
   mainCamera: {fileID: 330585545}
   yMoveSpeed: 2
+  speedAmount: 0.01
 --- !u!114 &400272281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1814,6 +1815,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   playerDieEffect: {fileID: 1066932711}
+  playerMovement: {fileID: 400272280}
   playerData: {fileID: 400272282}
   clips:
   - {fileID: 8300000, guid: 81066fab959474040a7ca3b5b42e04c4, type: 3}
