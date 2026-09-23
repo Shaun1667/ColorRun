@@ -37,6 +37,15 @@ public class UIArchive : MonoBehaviour
     private void OnEnable()
     {
         textStarData.text = $"별 (소지/ 획득)\n{PlayerPrefs.GetInt(Constants.STARCOUNT)}/{PlayerPrefs.GetInt(Constants.MAXSTARCOUNT)}";
-        //textGamePlayData.text = $"{}"
+        textGamePlayData.text = $"게임 플레이 횟수\n{PlayerPrefs.GetInt(Constants.GAMEPLAYCOUNT)}";
+        textDestroyAllObject.text = $"오브젝트 파괴 횟수\n{PlayerPrefs.GetInt(Constants.OBJECTDESTROYCOUNT)}";
+
+        int index = 0;
+        foreach(var item in playerData.DicDestroyObjectCunt)
+        {
+            textDestroyObjects[index].text =
+                PlayerPrefs.GetInt($"{Constants.OBJECTDESTROYCOUNT}{item.Key}").ToString();
+            index++;
+        }
     }
 }

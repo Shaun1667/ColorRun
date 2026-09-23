@@ -23,7 +23,7 @@ public class PlayerData : MonoBehaviour
     public void AddDestroyObjectCountAt(Color color)
     {
         dicDestroyObjectCount[color]++;
-        Debug.Log($"<b><color=${color.ToHexString()}>{dicDestroyObjectCount[color]}<color></b>");
+        Debug.Log($"<b><color=#{color.ToHexString()}>{dicDestroyObjectCount[color]}</color></b>");
     }
 
     public void SaveArchiveData()

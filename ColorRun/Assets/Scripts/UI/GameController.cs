@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private UIController uiController;
 
+    private float deltaTime = 0f; 
+
     public bool IsGamePlay { get; private set; } = false;
 
     private IEnumerator Start()
@@ -63,6 +65,30 @@ public class GameController : MonoBehaviour
 
         //게임오버 UI 출력
         uiController.GameOver(playerData.CurrentScore, bestScore, isBestScore);
+    }
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
+
+    private void Update()
+    {
+        deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
+    }
+
+    private void OnGUI()
+    {
+        GUIStyle style = new GUIStyle();
+        Rect rect = new Rect(10, 200, Screen.width, Screen.height);
+        style.alignment = TextAnchor.UpperLeft;
+        style.fontSize = 60;
+        style.normal.textColor = Color.red;
+
+        float ms = deltaTime * 1000f;
+        float fps = 1f / deltaTime;
+        string text = string.Format("{0:0.0} ms {1:0.}fps", ms, fps);
+        GUI.Label(rect, text, style);
     }
 
 }
