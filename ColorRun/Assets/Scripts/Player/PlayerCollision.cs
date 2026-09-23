@@ -63,9 +63,11 @@ public class PlayerCollision : MonoBehaviour
             if(collision.GetComponent<SpriteRenderer>().color == playerColor.CurrentColor)
             {
                 PlaySound(2);
+                playerData.AddDestroyObjectCountAt(playerColor.CurrentColor);
                 Destroy(collision.gameObject);
                 playerData.CurrentScore++; // 플레이어 점수 추가
                 Debug.Log("점수" + playerData.CurrentScore);
+                
             }
             else
             {
