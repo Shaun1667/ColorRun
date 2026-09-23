@@ -13,6 +13,7 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField]
     private Collider2D playerCollider;
     */
+    
     [SerializeField]
     private UnityEvent onPlayerDie;
     [SerializeField]
@@ -63,6 +64,7 @@ public class PlayerCollision : MonoBehaviour
             if (collision.GetComponent<SpriteRenderer>().color == playerColor.CurrentColor)
             {
                 PlaySound(2);
+                playerData.AddDestroyObjectCountAt(playerColor.CurrentColor);
                 Destroy(collision.gameObject);
                 playerData.CurrentScore++; //플레이어 점수 증가
                 Debug.Log("점수" + playerData.CurrentScore);
