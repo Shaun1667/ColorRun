@@ -27,6 +27,8 @@ public class PlayerCollision : MonoBehaviour
     private UnityEvent onPlayerDie;
     [SerializeField]
     private ParticleSystem playerDieEffect;
+    [SerializeField]
+    private PlayerMovement playerMovement;
 
     private void Awake()
     {
@@ -46,6 +48,9 @@ public class PlayerCollision : MonoBehaviour
             // 구역 생성
             areaSpawner.SpawnArea();
 
+            //플레이어 이동속도 증가
+            playerMovement.IncreaseMoveSpeed();
+
             // 충돌한 물체를 삭제
             Destroy(collision.gameObject);
         }
@@ -63,6 +68,7 @@ public class PlayerCollision : MonoBehaviour
             {
                 PlaySound(1);
                 // 충돌한 물체를 삭제
+                playerData.AddDestroyObjectCountAt(playerColor.CurrentColor);
                 Destroy(collision.gameObject);
                 playerData.CurrentScore++; //플레이어 점수 증가
             }
